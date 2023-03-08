@@ -1,0 +1,18 @@
+[build]
+  command = "npm run production"
+  publish = "public"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"
+
+[[plugins]]
+  package = "netlify-plugin-inline-critical-css"
+
+[functions]
+   directory = "netlify/functions"
+
+ [[redirects]]
+   from = "/api/screenshot/*"
+   to = "/.netlify/builders/screenshot"
+   status = 200
+   force = true

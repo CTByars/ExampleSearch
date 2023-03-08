@@ -1,0 +1,14 @@
+/** Global Settings **/
+$enable-rounded: false;
+
+/** Colors **/
+$primary: #7950f2;
+$light: silver;
+$custom: #ec560d;
+
+/** Override or add colors **/
+$custom-theme-colors: (
+  "primary": $primary,
+  "light": $light,
+  "custom": $custom
+);

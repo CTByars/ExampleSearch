@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
 
   <ul class="posts">
   {% for post in collections.pages | results(term) %}
-    <li><a href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
+    <li><a data-attribute="searchResult" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
   {% endfor %}
   </ul>
 

@@ -25,13 +25,11 @@ eleventyExcludeFromCollections: true
   <ul class="posts" data-search-results="searchResults-resultsTally">
 
   {% if collections.pages| results(term) | length  > 0 %}
-  {% for post in collections.pages | results(term) %}
-    <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
-  {% endfor %}
-
-  {% else if collections.pages| results(term) | length  <= 0 %}
+    {% for post in collections.pages | results(term) %}
+      <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
+    {% endfor %}
+  {% elif collections.pages| results(term) | length  <= 0 %}
     <p>No results</p>
-
   {% endif %}
   </ul>
 

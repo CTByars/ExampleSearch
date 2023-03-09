@@ -23,16 +23,9 @@ eleventyExcludeFromCollections: true
   <p><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
   <ul class="posts" data-search-results="searchResults-resultsTally">
-
-  {% if term == "" %}
-  <p>No search results<p/>
-  {% else %}
-
   {% for post in collections.pages | results(term) %}
     <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
   {% endfor %}
-
-  {% endif %}
   </ul>
 
 

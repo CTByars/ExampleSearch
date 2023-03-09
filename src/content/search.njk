@@ -7,6 +7,12 @@ eleventyComputed:
 eleventyExcludeFromCollections: true
 ---
 
+<form class="form-search" action="/search/" method="get">
+  <label for="search">Search the site:</label>
+  <input type="text" id="search" name="s" placeholder="Type your search term..." data-header="searchBox-inputField">
+  <button type="submit" data-header="searchBox-searchButton">Search</button>
+</form>
+
 {% set term = eleventy.serverless.query.s %}
 
 {% if term == "" %}
@@ -16,9 +22,9 @@ eleventyExcludeFromCollections: true
   <h2>Search for: {{ term }}</h2>
   <p><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
-  <ul class="posts">
+  <ul class="posts" data-search-results="searchResults-resultsTally">
   {% for post in collections.pages | results(term) %}
-    <li><a data-attribute="searchResult" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
+    <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
   {% endfor %}
   </ul>
 

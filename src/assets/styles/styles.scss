@@ -40,15 +40,6 @@ a {
   }
 }
 
-@media only screen and (max-width: 580) {
-  #navigation {
-    .form-search{
-      display: flex-wrap;
-      color: aqua;
-    }
-  }
-}
-
 #footer {
   margin: auto;
   max-width: var(--container-width);
@@ -95,3 +86,13 @@ button {
 label {
   padding: calc(var(--unit) / 2) 0;
 }
+
+.form-search {
+  article[data-page="searchBox-inputField"]{
+    padding-bottom: 25px;
+    color: blue;
+  }
+
+  display: flex;
+}
+

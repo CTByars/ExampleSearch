@@ -40,6 +40,13 @@ a {
   }
 }
 
+//attempt to only update the form on page
+.form-search {
+  display: flex-wrap;
+  margin-right: 0;
+  margin-left: auto;
+}
+
 @media only screen and (max-width: 590px){
   #navigation {
     display: flex;

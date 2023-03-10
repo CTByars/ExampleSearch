@@ -95,12 +95,8 @@ label {
 }
 
 //none of this is working
-.form-search {
-  article[data-page="searchBox-inputField"]{
-    padding-bottom: 25px;
+article[data-header="headerContent-logo"]{
+    width: 50%;
     color: blue;
-  }
-
-  display: flex;
 }
 

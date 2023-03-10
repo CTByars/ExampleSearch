@@ -23,7 +23,7 @@ a {
 }
 
 #navigation {
-  display: flex;
+  display: flex-wrap;
   border-bottom: 1px solid var(--color-light);
   margin: var(--unit);
 
@@ -87,9 +87,16 @@ label {
 }
 
 .form-search {
-  display: flex-wrap;
+  display: flex;
 }
 
 article[data-page="searchBox-inputField"] {
+}
 
+#search {
+  .form-search {
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: calc(var(--unit) * 0.25);
+  }
 }

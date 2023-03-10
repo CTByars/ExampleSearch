@@ -40,8 +40,5 @@
     "sass": "^1.45.0",
     "stylelint": "^14.0.1",
     "stylelint-config-standard": "^23.0.0"
-  },
-  "dependencies": {
-    "eleventy-plugin-read-more": "^1.0.2"
   }
 }

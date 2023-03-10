@@ -40,6 +40,14 @@ a {
   }
 }
 
+@media only screen and (max-width: 590px){
+  #navigation {
+    .form-search{
+      flex-shrink: 0;
+    }
+  }
+}
+
 #footer {
   margin: auto;
   max-width: var(--container-width);
@@ -87,6 +95,7 @@ label {
   padding: calc(var(--unit) / 2) 0;
 }
 
+//none of this is working
 .form-search {
   article[data-page="searchBox-inputField"]{
     padding-bottom: 25px;

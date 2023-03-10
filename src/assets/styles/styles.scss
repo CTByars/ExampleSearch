@@ -29,7 +29,7 @@ a {
 
   > img {
     max-height: 50px;
-    width: 10%;
+    width: auto;
   }
 
   .form-search {
@@ -95,4 +95,8 @@ label {
 }
 
 //none of this is working
+article[data-header="headerContent-logo"]{
+    padding-bottom: 25px;
+    color: blue;
+}
 

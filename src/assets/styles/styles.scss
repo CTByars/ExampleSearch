@@ -23,7 +23,7 @@ a {
 }
 
 #navigation {
-  display: flex-wrap;
+  display: flex;
   border-bottom: 1px solid var(--color-light);
   margin: var(--unit);
 
@@ -33,6 +33,7 @@ a {
   }
 
   .form-search {
+    display: flex-wrap;
     margin-right: 0;
     margin-left: auto;
     margin-bottom: calc(var(--unit) * 0.25);
@@ -91,12 +92,5 @@ label {
 }
 
 article[data-page="searchBox-inputField"] {
-}
-
-#search {
-  .form-search {
-    margin-right: 0;
-    margin-left: auto;
-    margin-bottom: calc(var(--unit) * 0.25);
-  }
+  padding-bottom: 25px;
 }

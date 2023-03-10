@@ -37,14 +37,14 @@ a {
     margin-right: 0;
     margin-left: auto;
     margin-bottom: calc(var(--unit) * 0.25);
-    flex-shrink: 0;
   }
 }
 
 @media (max-width: 580) {
   #navigation {
     .form-search{
-
+      display: flex-wrap;
+      flex-shrink: 0;
     }
   }
 }

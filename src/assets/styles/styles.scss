@@ -42,9 +42,8 @@ a {
 
 @media only screen and (max-width: 590px){
   #navigation {
-    .form-search{
-      flex-shrink: 0;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

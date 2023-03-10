@@ -88,10 +88,9 @@ label {
 }
 
 .form-search {
+  article[data-page="searchBox-inputField"]{
+    padding-bottom: 25px;
+    color: blue;
+  }
   display: flex;
-}
-
-article[data-page="searchBox-inputField"] {
-  padding-bottom: 25px;
-  color: blue;
 }

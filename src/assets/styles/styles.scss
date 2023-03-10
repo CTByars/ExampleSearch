@@ -87,9 +87,9 @@ label {
 }
 
 .form-search {
-  display: flex;
+  display: flex-wrap;
 }
 
 article[data-page="searchBox-inputField"] {
-  margin-bottom: 0;
+
 }

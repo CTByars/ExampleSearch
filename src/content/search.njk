@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
     <button type="submit" data-page="searchBox-searchButton">Search</button>
   </form>
 
-  <h2>Search for: {{ term }}</h2>
+  <h2 data-search-results="searchFor-Term">Search for: {{ term }}</h2>
   <p><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
   <ul class="posts" data-search-results="searchResults-resultsTally">

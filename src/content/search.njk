@@ -19,9 +19,9 @@ eleventyExcludeFromCollections: true
   </form>
 
   <h2 data-search-results="searchFor-Term">Search for: {{ term }}</h2>
-  <p><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
+  <p data-search-results="searchResults-resultsTally"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
-  <ul class="posts" data-search-results="searchResults-resultsTally">
+  <ul class="posts">
 
   {% if collections.pages| results(term) | length  > 0 %}
     {% for post in collections.pages | results(term) %}

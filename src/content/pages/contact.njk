@@ -14,14 +14,14 @@ permalink: /contact/
     <label>Your Email: <input type="email" name="email" required/></label>
   </p>
   <p>
-    <label>Phone: <input type="tel" name="phone" required/></label>
+    <label>Phone: <input type="tel" name="phone" pattern="[1-9]{1}[0-9]{9}" required/></label>
   </p>
   <p>
     <label>Best contact method:
-      <select>
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
-      </select>
+      <input type="radio" id="radio_email" value="Email">
+      <label for="radio_email">Email</label><br>
+      <input type="radio" id="radio-phone" name="radio-phone" value="Phone">
+      <label for="radio-phone">Phone</label><br>
     </label>
   </p>
   <p>

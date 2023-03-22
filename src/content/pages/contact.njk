@@ -1,19 +1,33 @@
 ---
-title: Contact Me 📧
+title: Contact Us
 permalink: /contact/
 ---
 
 <form name="contact" method="POST" data-netlify="true" action="/thank-you/">
   <p>
-    <label>Your Name: <input type="text" name="name" /></label>
+    <label>First Name: <input type="text" name="first_name" /></label>
+  </p>
+    <p>
+    <label>Last Name: <input type="text" name="last_name" /></label>
   </p>
   <p>
     <label>Your Email: <input type="email" name="email" /></label>
   </p>
   <p>
+    <label>Phone: <input type="tel" name="phone" /></label>
+  </p>
+  <p>
+    <label>Best contact method:
+      <select>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+    </label>
+  </p>
+  <p>
     <label>Message: <textarea name="message"></textarea></label>
   </p>
   <p>
-    <button type="submit">Send</button>
+    <button type="submit">Submit</button>
   </p>
 </form>

@@ -59,6 +59,19 @@ function check () {
     error.innerHTML = "";
   }
 
+  // Drop down validation
+  field = document.getElementById("contactMethod");
+  error = document.getElementById("contactMethod-Error");
+  if (document.getElementById("contactMethod").selectedIndex == "Choose an option") {
+    valid = false;
+    field.classList.add("err");
+    error.innerHTML = "Please choose a contact method\r\n";
+    return false;
+  } else {
+    field.classList.remove("err");
+    error.innerHTML = "";
+  }
+
   // (C4) RESULT
   return valid;
 }
@@ -83,11 +96,12 @@ function check () {
   </p>
   <p>
     <label>Best contact method:
-      <select>
+      <select id="contactMethod">
         <option selected hidden value="Choose an option">Choose an option</option>
         <option value="email">Email</option>
         <option value="phone">Phone</option>
       </select>
+        <div id="contactMethod-Error" class="emsg"></div>
     </label>
   </p>
   <p>

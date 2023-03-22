@@ -5,7 +5,7 @@ permalink: /contact/
 
 <form name="contact" method="POST" data-netlify="true" action="/thank-you/">
   <p>
-    <label>First Name: <input type="text" name="first_name" required/></label>
+    <label>First Name: <input type="text" name="first_name" autocomplete="off" required/></label>
   </p>
     <p>
     <label>Last Name: <input type="text" name="last_name" required/></label>
@@ -18,10 +18,10 @@ permalink: /contact/
   </p>
   <p>
     <label>Best contact method:
-      <input type="radio" id="radio_email" value="Email">
-      <label for="radio_email">Email</label><br>
-      <input type="radio" id="radio-phone" name="radio-phone" value="Phone">
-      <label for="radio-phone">Phone</label><br>
+      <select>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
     </label>
   </p>
   <p>

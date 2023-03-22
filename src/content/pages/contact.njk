@@ -62,7 +62,8 @@ function check () {
   // Drop down validation
   field = document.getElementById("contactMethod");
   error = document.getElementById("contactMethod-Error");
-  if (document.getElementById("contactMethod").selectedIndex == "Choose an option") {
+  curSelect = document.getElementById("contactMethod").selectedIndex;
+  if (curSelect === "Choose an option") {
     valid = false;
     field.classList.add("err");
     error.innerHTML = "Please choose a contact method\r\n";

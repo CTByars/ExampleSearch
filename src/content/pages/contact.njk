@@ -37,7 +37,7 @@ function check () {
 }
 </script>
 
-<form name="contact" id="contact_form" method="POST" data-netlify="true" action="/thank-you/">
+<form name="contact" id="contact_form" method="POST" data-netlify="true" action="/thank-you/" onsubmit="return check()" novalidate>
   <p>
     <label>First Name: <input type="text" name="first_name" autocomplete="off" required/></label>
   </p>

@@ -238,11 +238,3 @@ module.exports = function (eleventyConfig) {
     templateFormats: ['njk', 'md', '11ty.js'],
   };
 };
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setFrontMatterParsingOptions({
-    excerpt: true,
-    // Optional, default is "---"
-    excerpt_separator: "<!-- excerpt -->"
-  });
-};

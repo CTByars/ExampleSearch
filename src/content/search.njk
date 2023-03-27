@@ -26,7 +26,6 @@ eleventyExcludeFromCollections: true
   {% if collections.pages| results(term) | length  > 0 %}
     {% for post in collections.pages | results(term) %}
       <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
-      <li>{{ post.data.page.description }}</li>
     {% endfor %}
   {% elif collections.pages| results(term) | length  <= 0 %}
     <p data-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>

@@ -3,10 +3,7 @@ permalink: /
 title: Team Member Search
 ---
 
-<form class="form-search" action="/search/" method="get">
-  <input type="text" id="search" name="s" placeholder="Search..." data-page="searchBox-inputField">
-  <button type="submit" data-page="searchBox-searchButton">Search</button>
-</form>
+{% include "partials/searchform.njk" %}
 
 {# Will add a image below the main index section
 <hr>

@@ -12,23 +12,19 @@ eleventyExcludeFromCollections: true
   {% include "partials/searchform.njk" %}
 {% else %}
 
-  <form class="form-search" action="/search/" method="get">
-    <label for="search">Search the site:</label>
-    <input type="text" id="search" name="s" placeholder="Search..." data-page="searchBox-inputField">
-    <button type="submit" data-page="searchBox-searchButton">Search</button>
-  </form>
+{% include "partials/searchform.njk" %}
 
-  <h2 data-search-results="searchFor-Term">Search for: {{ term }}</h2>
-  <p data-search-results="searchResults-resultsTally"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
+  <h2 data-test-search-results="searchFor-Term">Search for: {{ term }}</h2>
+  <p data-test-search-results="searchResults-resultsTally"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
   <ul class="posts">
 
   {% if collections.pages| results(term) | length  > 0 %}
     {% for post in collections.pages | results(term) %}
-      <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title }}</a></li>
+      <li><a data-test-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title | highlight(term) | safe }}</a></li>
     {% endfor %}
   {% elif collections.pages| results(term) | length  <= 0 %}
-    <p data-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>
+    <p data-test-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>
   {% endif %}
   </ul>
 

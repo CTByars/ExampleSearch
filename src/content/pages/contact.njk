@@ -2,86 +2,11 @@
 title: Contact Us
 permalink: /contact/
 ---
-<script>
-function check () {
-  // (C1) INIT
-  var valid = true, error = "", field = "";
-
-  // First Name Check
-  field = document.getElementById("firstName");
-  error = document.getElementById("firstName-Error");
-  if (!field.checkValidity()) {
-    valid = false;
-    field.classList.add("err");
-    error.innerHTML = "Please enter your first name\r\n";
-    return false;
-  } else {
-    field.classList.remove("err");
-    error.innerHTML = "";
-  }
-
-  // Last Name Check
-  field = document.getElementById("lastName");
-  error = document.getElementById("lastName-Error");
-  if (!field.checkValidity()) {
-    valid = false;
-    field.classList.add("err");
-    error.innerHTML = "Please enter your last name\r\n";
-    return false;
-  } else {
-    field.classList.remove("err");
-    error.innerHTML = "";
-  }
-
-  // email Check
-  field = document.getElementById("email");
-  error = document.getElementById("email-Error");
-  if (!field.checkValidity()) {
-    valid = false;
-    field.classList.add("err");
-    error.innerHTML = "Enter email format ex: john@email.com\r\n";
-    return false;
-  } else {
-    field.classList.remove("err");
-    error.innerHTML = "";
-  }
-
-  // (C3) NUMBER
-  field = document.getElementById("phone");
-  error = document.getElementById("phone-Error");
-  if (!field.checkValidity()) {
-    valid = false;
-    field.classList.add("err");
-    error.innerHTML = "Please enter at most 10 numbers.\r\n";
-    return false;
-  } else {
-    field.classList.remove("err");
-    error.innerHTML = "";
-  }
-
-  // Drop down validation - This does nothing at the moment
-  field = document.getElementById("contactMethod");
-  error = document.getElementById("contactMethod-Error");
-  curSelect = document.getElementById("contactMethod").selectedIndex;
-  if (curSelect === "Choose an option") {
-    valid = false;
-    field.classList.add("err");
-    error.innerHTML = "Please choose a contact method\r\n";
-    return false;
-  } else {
-    field.classList.remove("err");
-    error.innerHTML = "";
-  }
-
-  // (C4) RESULT
-  return valid;
-}
-</script>
 
 <form name="contact" id="contact_form" method="POST" data-netlify="true" action="/thank-you/" onsubmit="return check()" novalidate>
   <p>
     <label>First Name: <input id="firstName" type="text" name="first_name" autocomplete="off" required/></label>
-    <div id="firstName-Error" class="emsg"></div> 
+    <div id="firstName-Error" class="emsg"></div>
   </p>
     <p>
     <label>Last Name: <input id="lastName" type="text" name="last_name" autocomplete="off" required/></label>

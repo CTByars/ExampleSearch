@@ -23,4 +23,12 @@ module.exports = {
       return results;
     });
   },
+
+  // Filter to highlight wrap the passed term in a span
+  highlight: function (eleventyConfig) {
+    eleventyConfig.addFilter("highlight", (content, term) => {
+      const regex = RegExp(term, "gi");
+      return content.replace(regex, `<span class="highlight">$&</span>`);
+    });
+  }
 }

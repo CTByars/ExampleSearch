@@ -3,13 +3,3 @@
 .highlight {
   @extend .bg-warning;
 }
-
-@media only screen and (max-width: 580) {
-  #navigation {
-    .form-search{
-      display: flex-wrap;
-      flex-shrink: 0;
-      color: aqua;
-    }
-  }
-}

@@ -237,4 +237,6 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ['njk', 'md', '11ty.js'],
   };
+  eleventyConfig.setFrontMatterParsingOptions({ excerpt: true
+  });
 };

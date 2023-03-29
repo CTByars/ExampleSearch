@@ -58,6 +58,9 @@ const htmlmin = require("html-minifier");
  * https://www.11ty.dev/docs/config/
  */
 module.exports = function (eleventyConfig) {
+  
+  eleventyConfig.setFrontMatterParsingOptions({ excerpt: true
+  });
 
   /**
    * Start pretty console output
@@ -237,6 +240,5 @@ module.exports = function (eleventyConfig) {
     },
     templateFormats: ['njk', 'md', '11ty.js'],
   };
-  eleventyConfig.setFrontMatterParsingOptions({ excerpt: true
-  });
+
 };

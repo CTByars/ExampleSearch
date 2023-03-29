@@ -22,7 +22,9 @@ eleventyExcludeFromCollections: true
   {% if collections.pages| results(term) | length  > 0 %}
     {% for post in collections.pages | results(term) %}
       <li><a data-test-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title | highlight(term) | safe }}</a></li>
-      <p>{{ post.data.page.excerpt }}</p>
+      {%- if post.data.page.excerpt -%}
+        <p>{{ post.data.page.excerpt }}</p>
+      {%- endif -%}
     {% endfor %}
   {% elif collections.pages| results(term) | length  <= 0 %}
     <p data-test-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>

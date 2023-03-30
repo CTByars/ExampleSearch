@@ -1,5 +1,4 @@
 <nav id="navigation" class="navbar navbar-expand-lg" role="navigation">
-  <div class="container">
     <a class="navbar-brand" href="https://gentle-dolphin-a02324.netlify.app/"><img src="assets/images/global/RebelLogo.png"></a>
      
         {% for item in navigation.items %}
@@ -41,7 +40,6 @@
           {% include "partials/nav-item.njk" %}
 
         {% endfor %}
-  </div>
     <form class="form-search" action="/search/" method="get">
     <label for="search">Search the site:</label>
     <input type="text" id="search" name="s" placeholder="Search..." data-page="searchBox-inputField">

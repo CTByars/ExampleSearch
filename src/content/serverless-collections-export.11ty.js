@@ -15,6 +15,7 @@ exports.render = function(data) {
           page: {
             url: entry.data.page.url,
             title: entry.data.title,
+            excerpt: entry.data.excerpt,
             content: entry.templateContent,
           },
         }

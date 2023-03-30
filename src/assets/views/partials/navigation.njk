@@ -1,12 +1,7 @@
 <nav id="navigation" class="navbar navbar-expand-lg" role="navigation">
   <div class="container">
     <a class="navbar-brand" href="https://gentle-dolphin-a02324.netlify.app/"><img src="assets/images/global/RebelLogo.png"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navigation-content">
-      <ul class="navbar-nav">
+     
         {% for item in navigation.items %}
 
           {# Set attributes and classes to blank to start #}
@@ -46,8 +41,6 @@
           {% include "partials/nav-item.njk" %}
 
         {% endfor %}
-      </ul>
-    </div>
   </div>
     <form class="form-search" action="/search/" method="get">
     <label for="search">Search the site:</label>

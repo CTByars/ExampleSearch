@@ -1,48 +1,46 @@
-<nav id="navigation" class="navbar navbar-expand-lg" role="navigation">
-    <a class="navbar-brand" href="https://gentle-dolphin-a02324.netlify.app/"><img src="assets/images/global/RebelLogo.png"></a>
-     
-        {% for item in navigation.items %}
+<nav id="navigation" role="navigation">
+  {% image "assets/images/global/RebelLogo.png", "Rebel Logo" %}
+  <span class="navigation-label">Navigation:</span>
 
-          {# Set attributes and classes to blank to start #}
-          {% set relAttribute = '' %}
-          {% set currentAttribute = '' %}
-          {% set itemUrl = item.url %}
-          {% set target = '' %}
-          {% set active = '' %}
+  {% for item in navigation.items %}
 
-          {# Set Attributes #}
-          {% if item.rel %}
-            {% set relAttribute = ' rel="' + item.rel + '"' %}
-          {% endif %}
+    {# Set attributes and classes to blank to start #}
+    {% set relAttribute = '' %}
+    {% set currentAttribute = '' %}
+    {% set itemUrl = item.url %}
+    {% set target = '' %}
+    {% set active = '' %}
 
-          {% if page.url | lower == item.url | lower %}
-            {% set currentAttribute = ' aria-current="page"' %}
-            {% set active = 'active' %}
-          {% endif %}
+    {# Set Attributes #}
+    {% if item.rel %}
+      {% set relAttribute = ' rel="' + item.rel + '"' %}
+    {% endif %}
 
-          {# {% set hasSubmenu = '' %}
-          {% set dropdown = '' %}
-          {% set dropdownToggle = '' %}
-          {% set dropdownAtttributes = '' %} #}
+    {% if page.url | lower == item.url | lower %}
+      {% set currentAttribute = ' aria-current="page"' %}
+      {% set active = 'active' %}
+    {% endif %}
 
-          {# {% if item.submenuitems | length %}
-            {% set hasSubmenu = true %}
-            {% set dropdown = 'dropdown' %}
-            {% set dropdownToggle = 'dropdown-toggle' %}
-            {% set dropdownAttributes = 'role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' %}
-            {% set itemUrl = '#' %}
-          {% endif %} #}
+    {# {% set hasSubmenu = '' %}
+    {% set dropdown = '' %}
+    {% set dropdownToggle = '' %}
+    {% set dropdownAttributes = '' %} #}
 
-          {# {% if item.external %}
-            {% set target = 'target="_blank"' %}
-          {% endif %} #}
+    {# {% if item.submenuitems | length %}
+      {% set hasSubmenu = true %}
+      {% set dropdown = 'dropdown' %}
+      {% set dropdownToggle = 'dropdown-toggle' %}
+      {% set dropdownAttributes = 'role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' %}
+      {% set itemUrl = '#' %}
+    {% endif %} #}
 
-          {% include "partials/nav-item.njk" %}
+    {# {% if item.external %}
+      {% set target = 'target="_blank"' %}
+    {% endif %} #}
 
-        {% endfor %}
-    <form class="form-search" action="/search/" method="get">
-    <label for="search">Search the site:</label>
-    <input type="text" id="search" name="s" placeholder="Search..." data-page="searchBox-inputField">
-    <button class = "btn-primary" type="submit" data-page="searchBox-searchButton">Search</button>
-  </form>
+    {% include "partials/nav-item.njk" %}
+
+  {% endfor %}
+
+  {% include "partials/searchform.njk" %}
 </nav>

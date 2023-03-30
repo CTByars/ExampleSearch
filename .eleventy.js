@@ -59,9 +59,6 @@ const htmlmin = require("html-minifier");
  */
 module.exports = function (eleventyConfig) {
   
-  eleventyConfig.setFrontMatterParsingOptions({ excerpt: true
-  });
-
   /**
    * Start pretty console output
    */

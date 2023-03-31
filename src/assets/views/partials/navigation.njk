@@ -1,5 +1,5 @@
 <nav id="navigation" role="navigation">
-  <span class="navigation-label">{% image "assets/images/global/RebelLogo.png", "Rebel Logo" %} Navigation:</span>
+  <span class="navigation-label">{% image "assets/images/global/RebelLogo.png", "Rebel Logo" %}</span>
 
   {% for item in navigation.items %}
 
@@ -40,4 +40,9 @@
     {% include "partials/nav-item.njk" %}
 
   {% endfor %}
+  <form class="form-search" action="/search/" method="get">
+    <label for="search">Search the site:</label>
+    <input type="text" id="search" name="s" placeholder="Search..." data-page="searchBox-inputField">
+    <button class = "btn-primary" type="submit" data-page="searchBox-searchButton">Search</button>
+  </form>
 </nav>

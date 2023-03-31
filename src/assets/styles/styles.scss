@@ -42,6 +42,11 @@ a {
     display: flex;
     flex-wrap: wrap;
   }
+  .navigation-label img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 #footer {
   margin: auto;
@@ -82,12 +87,3 @@ button {
 label {
   padding: calc(var(--unit) / 2) 0;
 }
-//none of this is working
-.form-search {
-  article[data-page="searchBox-inputField"]{
-    padding-bottom: 25px;
-    color: blue;
-  }
-  display: flex;
-}
-

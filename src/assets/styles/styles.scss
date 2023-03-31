@@ -49,8 +49,7 @@ a {
     display: flex;
     flex-wrap: wrap;
   }
-  #navigation {
-    > img {
+  .navigation-label img{
     margin-left: auto;
     margin-right: auto;
     display: block;

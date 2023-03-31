@@ -1,6 +1,5 @@
 <nav id="navigation" role="navigation">
-  {% image "assets/images/global/RebelLogo.png", "Rebel Logo" %}
-  
+  <span class="navigation-label">{% image "assets/images/global/RebelLogo.png", "Rebel Logo" %} Navigation:</span>
 
   {% for item in navigation.items %}
 
@@ -41,6 +40,4 @@
     {% include "partials/nav-item.njk" %}
 
   {% endfor %}
-
-  {% include "partials/searchform.njk" %}
 </nav>

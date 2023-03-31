@@ -22,7 +22,7 @@ a {
   margin: calc(var(--unit) * 5) auto;
 }
 #navigation {
-  margin-top: 5%;
+  padding-top: 5%;
   display: flex;
   border-bottom: 1px solid var(--color-light);
   margin: var(--unit);
@@ -34,10 +34,13 @@ a {
     display: flex-wrap;
     margin-right: 0;
     margin-left: auto;
+    float: right;
   }
   h2{
     text-align: center;
     text-decoration: underline;
+    margin: auto;
+    width: 50%;
   }
 }
 

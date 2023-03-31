@@ -59,7 +59,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 80%;
+    width: 100%;
   }
 }
 #footer {
@@ -94,9 +94,6 @@ textarea {
   width: 100%;
   display: block;
   height: 100%;
-}
-button {
-  margin: 0;
 }
 label {
   padding: calc(var(--unit) / 2) 0;

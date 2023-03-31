@@ -7,7 +7,7 @@
     {# {{ relAttribute | safe }} #}
     {# {{ dropdownAttributes | safe }} #}
   >
-    <h2>{{ item.text }}</h2>
+    <h2 data-header-{{ itemurl }}="navItem">{{ item.text }}</h2>
   </a>
 
   {# {% if hasSubmenu %}

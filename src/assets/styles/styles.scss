@@ -16,6 +16,7 @@ body {
 }
 a {
   color: var(--color-primary);
+  display: block;
 }
 #main {
   max-width: var(--container-width);

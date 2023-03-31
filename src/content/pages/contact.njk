@@ -81,19 +81,19 @@ function check () {
 <form name="contact" id="contact_form" method="POST" data-netlify="true" action="/thank-you/" onsubmit="return check()" novalidate>
   <p>
     <label>First Name: <input id="firstName" type="text" name="first_name" autocomplete="off" data-contact-form="firstName" required/></label>
-    <div id="firstName-Error" class="emsg"></div> 
+    <div id="firstName-Error" class="emsg" data-contact-form="firstName-error"></div> 
   </p>
     <p>
     <label>Last Name: <input id="lastName" type="text" name="last_name" autocomplete="off" data-contact-form="lastName" required/></label>
-    <div id="lastName-Error" class="emsg"></div>
+    <div id="lastName-Error" class="emsg" data-contact-form="lastName-error"></div>
   </p>
   <p>
     <label>Your Email: <input id="email" type="email" name="email" autocomplete="off" data-contact-form="email" required/></label>
-    <div id="email-Error" class="emsg"></div>
+    <div id="email-Error" class="emsg" data-contact-form="email-error"></div>
   </p>
   <p>
     <label>Phone: <input id="phone" type="tel" name="phone" pattern="[1-9]{1}[0-9]{9}" maxlength ="10" autocomplete="off" data-contact-form="phone" required/></label>
-    <div id="phone-Error" class="emsg"></div>
+    <div id="phone-Error" class="emsg" data-contact-form="phone-error"></div>
   </p>
   <p>
     <label>Best contact method:
@@ -102,7 +102,7 @@ function check () {
         <option value="email">Email</option>
         <option value="phone">Phone</option>
       </select>
-        <div id="contactMethod-Error" class="emsg"></div>
+        <div id="contactMethod-Error" class="emsg" data-contact-form="selectMethod-error"></div>
     </label>
   </p>
   <p>

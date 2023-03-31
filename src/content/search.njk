@@ -14,18 +14,18 @@ eleventyExcludeFromCollections: true
 
 {% include "partials/searchform.njk" %}
 
-  <h2 data-test-search-results="searchFor-Term">Search for: {{ term }}</h2>
-  <p data-test-search-results="searchResults-resultsTally"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
+  <h2 data-search-results="searchFor-Term">Search for: {{ term }}</h2>
+  <p data-search-results="searchResults-resultsTally"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
   <ul class="posts">
 
   {% if collections.pages| results(term) | length  > 0 %}
     {% for post in collections.pages | results(term) %}
-      <li><a data-test-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title | highlight(term) | safe }}</a></li>
+      <li><a data-search-results="searchResults-resultTitle" href="{{ post.data.page.url }}">{{ post.data.page.title | highlight(term) | safe }}</a></li>
       <p>{{ post.data.page.excerpt }}</p>
     {% endfor %}
   {% elif collections.pages| results(term) | length  <= 0 %}
-    <p data-test-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>
+    <p data-search-results="searchResults-message">Sorry, there are no results. Try a different search term</p>
   {% endif %}
   </ul>
 

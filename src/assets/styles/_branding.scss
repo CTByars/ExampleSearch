@@ -12,3 +12,16 @@ $custom-theme-colors: (
   "light": $light,
   "custom": $custom
 );
+root {
+  /**
+    Spacing and units
+  */
+  --unit: 1rem;
+  --container-width: 60ch;
+  /**
+    Fonts
+  */
+  --font-family-sans-serif:
+    system,
+    -apple-system;
+  }

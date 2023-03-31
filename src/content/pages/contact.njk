@@ -80,24 +80,24 @@ function check () {
 
 <form name="contact" id="contact_form" method="POST" data-netlify="true" action="/thank-you/" onsubmit="return check()" novalidate>
   <p>
-    <label>First Name: <input id="firstName" type="text" name="first_name" autocomplete="off" required/></label>
+    <label>First Name: <input id="firstName" type="text" name="first_name" autocomplete="off" data-contact-form="firstName" required/></label>
     <div id="firstName-Error" class="emsg"></div> 
   </p>
     <p>
-    <label>Last Name: <input id="lastName" type="text" name="last_name" autocomplete="off" required/></label>
+    <label>Last Name: <input id="lastName" type="text" name="last_name" autocomplete="off" data-contact-form="lastName" required/></label>
     <div id="lastName-Error" class="emsg"></div>
   </p>
   <p>
-    <label>Your Email: <input id="email" type="email" name="email" autocomplete="off" required/></label>
+    <label>Your Email: <input id="email" type="email" name="email" autocomplete="off" data-contact-form="email" required/></label>
     <div id="email-Error" class="emsg"></div>
   </p>
   <p>
-    <label>Phone: <input id="phone" type="tel" name="phone" pattern="[1-9]{1}[0-9]{9}" maxlength ="10" autocomplete="off" required/></label>
+    <label>Phone: <input id="phone" type="tel" name="phone" pattern="[1-9]{1}[0-9]{9}" maxlength ="10" autocomplete="off" data-contact-form="phone" required/></label>
     <div id="phone-Error" class="emsg"></div>
   </p>
   <p>
     <label>Best contact method:
-      <select id="contactMethod">
+      <select id="contactMethod" data-contact-form="selectMethod">
         <option selected hidden value="Choose an option">Choose an option</option>
         <option value="email">Email</option>
         <option value="phone">Phone</option>
@@ -106,7 +106,7 @@ function check () {
     </label>
   </p>
   <p>
-    <label>Message: <textarea name="message" autocomplete="off"></textarea></label>
+    <label>Message: <textarea name="message" autocomplete="off" data-contact-form="message"></textarea></label>
   </p>
   <p>
     <button type="submit">Submit</button>

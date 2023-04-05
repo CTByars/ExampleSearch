@@ -42,7 +42,7 @@ a {
     text-align: center;
     text-decoration: underline;
     margin: auto;
-    display: inline;
+    display: block;
     width: 50%;
   }
 }
@@ -87,7 +87,7 @@ a {
     margin-right: auto;
   }
   > h2 {
-    width: 50%;
+    width: auto;
   }
 }
 #footer {

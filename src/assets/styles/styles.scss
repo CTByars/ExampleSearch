@@ -74,13 +74,9 @@ a {
   }
   h2{
     font-size:large;
-    padding: none;
-    display: block;
-    width: auto;
   }
   .header-titles{
-    justify-content: center;
-    display: block;
+    display: flex;
     width: 100%;
   }
 }

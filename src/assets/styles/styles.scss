@@ -53,6 +53,9 @@ a {
     justify-content: center;
     flex-wrap: wrap;
   }
+  ul{
+    overflow:hidden;zoom:1.0
+  } 
   .navigation-label img{
     //margin-left:15%;
     //margin-right: 10%;

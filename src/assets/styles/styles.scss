@@ -53,9 +53,6 @@ a {
     justify-content: center;
     flex-wrap: wrap;
   }
-  ul{
-    //margin-left: -5rem;
-  } 
   .navigation-label img{
     //margin-left:15%;
     //margin-right: 10%;
@@ -77,17 +74,8 @@ a {
   }
   h2{
     font-size:large;
-  }
-  .header-titles{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  > h2 {
-    width: auto;
+    padding: none;
+    display: block;
   }
 }
 #footer {

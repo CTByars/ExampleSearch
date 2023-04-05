@@ -1,6 +1,5 @@
 <nav id="navigation" role="navigation">
   <span class="navigation-label" data-header="headerContent-logo"><a href="https://gentle-dolphin-a02324.netlify.app/">{% image "assets/images/global/RebelLogo.png", "Rebel Logo" %}</a></span>
-  <div class="header-titles">
   {% for item in navigation.items %}
 
     {# Set attributes and classes to blank to start #}
@@ -40,7 +39,6 @@
     {% include "partials/nav-item.njk" %}
 
   {% endfor %}
-  </div>
   <form class="form-search" action="/search/" method="get">
     <input type="text" id="search" name="s" placeholder="Search..." data-header="searchBox-inputField">
     {#}<button type="submit" data-header="searchBox-searchButton">Search</button>{#}

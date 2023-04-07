@@ -17,10 +17,7 @@ body {
 a {
   color: var(--color-primary);
 }
-a:hover{
-  text-decoration-line: none;
-  transition: all 1s ease;
-}
+
 #input-group {
   height: auto;
 }
@@ -38,6 +35,10 @@ a:hover{
   > img {
     max-height: 50px;
     width: auto;
+  }
+  h2 a:hover{
+    text-decoration-line: none;
+    transition: all 1s ease;
   }
   .form-search {
     display: flex-wrap;

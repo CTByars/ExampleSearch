@@ -17,6 +17,9 @@ body {
 a {
   color: var(--color-primary);
 }
+#input-group {
+  height: auto;
+}
 #main {
   max-width: var(--container-width);
   margin: calc(var(--unit) * 5) auto;

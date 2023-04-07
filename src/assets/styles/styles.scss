@@ -17,6 +17,10 @@ body {
 a {
   color: var(--color-primary);
 }
+a:hover{
+  text-decoration-line: none;
+  transition: all 1s ease;
+}
 #input-group {
   height: auto;
 }

@@ -5,7 +5,7 @@ name: endtest
 jobs:
   test:
     name: Endtest Functional Test
-#    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@search
 

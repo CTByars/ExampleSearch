@@ -73,3 +73,6 @@ jobs:
           remove: '["./.github/workflows/zeropoint_template.yml", "./README.ZeroPoint.md"]'
           message: "Up to zero 🪐"
           tag: 'v1.0.0 --force'
+
+      - name: Run Endtest functional tests
+        uses: endtest-technologies/github-run-tests-action@v1.8

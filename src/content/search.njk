@@ -15,7 +15,7 @@ eleventyExcludeFromCollections: true
 {% include "partials/searchform.njk" %}
 
   <h2 data-search-results="searchFor-Term">Search for: {{ term }}</h2>
-  <p data-search-results="searchResults-resultsTally?"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
+  <p data-search-results="searchResults-resultsTally?2"><strong>{{ collections.pages| results(term) | length }}</strong> results</p>
 
   <ul class="posts">
 

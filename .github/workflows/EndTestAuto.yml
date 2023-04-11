@@ -36,3 +36,10 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.screenshots_and_video }}
           echo ${{ steps.endtest_functional_tests.outputs.hash }}
           echo ${{ steps.endtest_functional_tests.outputs.results }}
+
+      - name: Check for failed test cases
+        if: ${{ steps.endtest_functional_tests.outputs.failed }} > 0
+        run: |
+#          echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
+          echo "::error::There was atleast 1 test case that failed"
+          exit 1

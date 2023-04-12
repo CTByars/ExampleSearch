@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Functional test deployment
+      - name: Running EndTest test case(s)
         id: endtest_functional_tests
         uses: endtest-technologies/github-run-tests-action@v1.8
 #        env: "not required"
@@ -33,7 +33,12 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.hash }}
           echo ${{ steps.endtest_functional_tests.outputs.results }}
       - name: Check for errors
+        if: ${{ steps.endtest_functional_tests.outputs.errors != 0 }}
+        run: |
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"
+          exit 1
+      - name: Check for failed test cases
         if: ${{ steps.endtest_functional_tests.outputs.failed != 0 }}
         run: |
-          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred"
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} test case(s) failed. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"
           exit 1

@@ -5,8 +5,8 @@ on:
 name: endtest
 
 jobs:
-  test:
-    name: Endtest Functional Test
+  run_test_case:
+    name: Runs a test case based on the entered app/api info
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -36,9 +36,12 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.screenshots_and_video }}
           echo ${{ steps.endtest_functional_tests.outputs.hash }}
           echo ${{ steps.endtest_functional_tests.outputs.results }}
-  script:
-  rules:
-    - if: $steps.endtest_functional_tests.outputs.failed != 0
-      run: |
-        echo "There was at least 1 test case that failed"
-         exit 1
+
+  Check_test_results:
+    name: Reviews test case results and check for issues
+    needs: run_test_case
+      if: steps.endtest_functional_tests.outputs.failed != 0
+      steps:
+        run: |
+          echo "There was at least 1 test case that failed"
+          exit 1

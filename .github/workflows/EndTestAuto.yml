@@ -20,7 +20,7 @@ jobs:
           app_code: 85029485
           api_request: https://app.endtest.io/api.php?action=runWeb&appId=23844484&appCode=85029485&suite=869550&platform=windows&os=windows10&browser=chrome&browserVersion=latest&resolution=1920x1200&geolocation=sanfrancisco&cases=all&notes=
           number_of_loops: 10
-
+  
       - name: Use the outputs from test execution in a different step
         run: |
           echo ${{ steps.endtest_functional_tests.outputs.test_suite_name }}
@@ -41,7 +41,9 @@ jobs:
     needs: run_test_case
     runs-on: ubuntu-latest
     steps:
-       - run: echo ${{ steps.endtest_functional_tests.outputs.failed }}
+      -
+        if: ${{ ${{ steps.endtest_functional_tests.outputs.failed}} != 0 }}
+        run: echo ${{ steps.endtest_functional_tests.outputs.failed}}
   #    - run: echo $failed
         #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0

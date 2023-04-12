@@ -18,7 +18,7 @@ jobs:
           app_code: 85029485
           api_request: https://app.endtest.io/api.php?action=runWeb&appId=23844484&appCode=85029485&suite=869550&platform=windows&os=windows10&browser=chrome&browserVersion=latest&resolution=1920x1200&geolocation=sanfrancisco&cases=all&notes=
           number_of_loops: 10
-      - name: Use the outputs from test execution in a different step
+      - name: Use the outputs from test execution in a different step #this section is not needed. These are just the variables to use
         run: |
           echo ${{ steps.endtest_functional_tests.outputs.test_suite_name }}
           echo ${{ steps.endtest_functional_tests.outputs.configuration }}
@@ -34,4 +34,6 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.results }}
       - name: Check for errors
         if: ${{ steps.endtest_functional_tests.outputs.failed != 0 }}
-        run: echo ${{ steps.endtest_functional_tests.outputs.failed }}
+        run: |
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred"
+          exit 1

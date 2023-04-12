@@ -1,7 +1,7 @@
 name: endtest
 on: push
 #  workflow_dispatch:
-#  push:
+#  push: t
 
 jobs:
   wait_on_deploy:

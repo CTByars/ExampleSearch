@@ -11,7 +11,7 @@ jobs:
         uses: probablyup/wait-for-netlify-action@v3.4.0
         with:
           site_id: '88c60de7-e73d-4f50-8cef-f9f583162bae'
-          max_timeout: 120
+          max_timeout: 12000
         env:
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
 

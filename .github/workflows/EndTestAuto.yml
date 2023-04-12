@@ -10,8 +10,7 @@ jobs:
       - name: Wait for Netlify Deploy
         uses: mskelton/wait-for-netlify-action@v1.0.0
         with:
-          site_name: "gentle-dolphin-a02324"
-          max_timeout: 120
+          site_name: https://gentle-dolphin-a02324.netlify.app/
 
   run_test_case:
     name: Runs a test case based on the entered app/api info

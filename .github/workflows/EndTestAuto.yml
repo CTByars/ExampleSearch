@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        if: ${{ ${{ steps.endtest_functional_tests.outputs.failed}} != 0 }}
+        if: ${{ steps.endtest_functional_tests.outputs.failed != 0 }}
         run: echo ${{ steps.endtest_functional_tests.outputs.failed}}
   #    - run: echo $failed
         #echo run_test_case.failed

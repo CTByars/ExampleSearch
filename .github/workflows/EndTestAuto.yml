@@ -11,7 +11,7 @@ jobs:
         uses: mskelton/wait-for-netlify-action@v1.0.0
         with:
           max_timeout: 120
-          site_name: "gentle-dolphin-a02324"
+          site_name: gentle-dolphin-a02324
 
   run_test_case:
     name: Runs a test case based on the entered app/api info

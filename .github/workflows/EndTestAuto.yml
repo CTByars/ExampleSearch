@@ -39,9 +39,9 @@ jobs:
 
   Check_test_results:
     name: Reviews test case results and check for issues
-    needs: run_test_case
-      steps:
-        - run: echo ${{ run_test_case.failed }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ run_test_case.failed }}
         #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
     #  steps:

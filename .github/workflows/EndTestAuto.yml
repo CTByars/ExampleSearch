@@ -1,8 +1,7 @@
-name: endtest
 on:
   workflow_dispatch:
   push: 
-
+name: endtest
 jobs:
   run_test_case:
     name: Runs a test case based on the entered app/api info

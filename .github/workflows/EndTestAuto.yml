@@ -1,8 +1,18 @@
 on:
   workflow_dispatch:
-  push: 
+  push:
+
 name: endtest
 jobs:
+  wait_on_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Netlify Deploy
+        uses: mskelton/wait-for-netlify-action@v1.0.0
+        with:
+          max_timeout: 120
+          site_name: gentle-dolphin-a02324
+
   run_test_case:
     name: Runs a test case based on the entered app/api info
     runs-on: ubuntu-latest

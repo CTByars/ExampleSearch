@@ -3,6 +3,8 @@ on:
   push: 
 
 name: endtest
+env:
+  failed: 0
 
 jobs:
   run_test_case:
@@ -29,6 +31,7 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.test_cases }}
           echo ${{ steps.endtest_functional_tests.outputs.passed }}
           echo ${{ steps.endtest_functional_tests.outputs.failed }}
+          env.failed = steps.endtest_functional_tests.outputs.failed 
           echo ${{ steps.endtest_functional_tests.outputs.errors }}
           echo ${{ steps.endtest_functional_tests.outputs.start_time }}
           echo ${{ steps.endtest_functional_tests.outputs.end_time }}
@@ -42,7 +45,7 @@ jobs:
     needs: run_test_case
     runs-on: ubuntu-latest
     steps:
-      - run: echo $run_test_case.failed
+      - run: echo $failed
         #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
     #  steps:

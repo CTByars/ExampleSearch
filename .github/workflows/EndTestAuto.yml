@@ -1,10 +1,7 @@
+name: endtest
 on:
   workflow_dispatch:
   push: 
-
-name: endtest
-env:
-  failed: 0
 
 jobs:
   run_test_case:
@@ -31,7 +28,6 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.test_cases }}
           echo ${{ steps.endtest_functional_tests.outputs.passed }}
           echo ${{ steps.endtest_functional_tests.outputs.failed }}
-          env.failed = steps.endtest_functional_tests.outputs.failed 
           echo ${{ steps.endtest_functional_tests.outputs.errors }}
           echo ${{ steps.endtest_functional_tests.outputs.start_time }}
           echo ${{ steps.endtest_functional_tests.outputs.end_time }}
@@ -42,10 +38,11 @@ jobs:
 
   Check_test_results:
     name: Reviews test case results and check for issues
-    #needs: run_test_case
+    needs: run_test_case
     runs-on: ubuntu-latest
     steps:
-      - run: echo $failed
+       - run: echo $steps.endtest_functional_tests.outputs.failed
+  #    - run: echo $failed
         #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
     #  steps:

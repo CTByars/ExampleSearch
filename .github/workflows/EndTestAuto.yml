@@ -40,9 +40,9 @@ jobs:
   Check_test_results:
     name: Reviews test case results and check for issues
     needs: run_test_case
-      run: |
-      echo ${{ steps.endtest_functional_tests.outputs.failed }}
-      echo run_test_case.failed
+      steps:
+        -run: echo ${{ steps.endtest_functional_tests.outputs.failed }}
+        #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
     #  steps:
     #    run: |

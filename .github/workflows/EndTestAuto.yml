@@ -42,7 +42,7 @@ jobs:
     needs: run_test_case
     runs-on: ubuntu-latest
     steps:
-      - run: $echo run_test_case.failed
+      - run: echo run_test_case.failed
         #echo run_test_case.failed
     #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
     #  steps:

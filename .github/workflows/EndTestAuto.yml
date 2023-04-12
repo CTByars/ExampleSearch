@@ -33,19 +33,6 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.screenshots_and_video }}
           echo ${{ steps.endtest_functional_tests.outputs.hash }}
           echo ${{ steps.endtest_functional_tests.outputs.results }}
-
-  Check_test_results:
-    name: Reviews test case results and check for issues
-    needs: run_test_case
-    runs-on: ubuntu-latest
-    steps:
-      -
+      - name: Check for errors
         if: ${{ steps.endtest_functional_tests.outputs.failed != 0 }}
-        run: echo ${{ steps.endtest_functional_tests.outputs.failed}}
-  #    - run: echo $failed
-        #echo run_test_case.failed
-    #  if: ${steps.endtest_functional_tests.outputs.failed} != 0
-    #  steps:
-    #    run: |
-    #      echo "There was at least 1 test case that failed"
-    #      exit 1
+        run: echo ${{ steps.endtest_functional_tests.outputs.failed }}

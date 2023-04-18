@@ -2,7 +2,7 @@ name: endtest
 on:
   workflow_dispatch:
   pull_request:
-    branches: [search] #You would need to make sure this is correct every time
+    branches: [master] #You would need to make sure this is correct every time
 
 jobs:
   run_test_case:

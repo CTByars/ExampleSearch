@@ -37,7 +37,10 @@ jobs:
           echo ${{ steps.endtest_functional_tests.outputs.results }}
       - name: Check for errors
         run: |
-          if: [[ ${{ steps.endtest_functional_tests.outputs.errors != '0' }} ]]; then echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}" exit 1; else exit 0
+          if [[ ${{ steps.endtest_functional_tests.outputs.errors != 0 }} ]]; then echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"; fi
+          exit 1; 
       - name: Check for failed test cases
+        if: ${{ steps.endtest_functional_tests.outputs.failed != '0' }}
         run: |
-          if: [[ ${{ steps.endtest_functional_tests.outputs.failed != '0' }} ]]; then echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}" exit 1; else exit 0
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} test case(s) failed. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"
+          exit 1

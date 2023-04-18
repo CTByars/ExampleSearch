@@ -38,8 +38,8 @@ jobs:
       - name: Check for errors
         run: |
           if [[ ${{ steps.endtest_functional_tests.outputs.errors }} != 0 ]]; then exit 1; else exit 0; fi
-          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"
- ##     - name: Check for failed test cases
-   ##     if: steps.endtest_functional_tests.outputs.failed != 0
-    ##    run: |
-      ##    echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} test case(s) failed. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"; exit 1;
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.errors }} error(s) occurred. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"
+      - name: Check for failed test cases
+        run: |
+          if [[ ${{ steps.endtest_functional_tests.outputs.failed }} != 0 ]]; then exit 1; else exit 0; fi
+          echo "Please review, ${{ steps.endtest_functional_tests.outputs.failed }} test case(s) failed. View results here: ${{ steps.endtest_functional_tests.outputs.results }}"

@@ -17,9 +17,9 @@ jobs:
 #        env: "not required"
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          app_id: 23844484
-          app_code: 85029485
-          api_request: https://app.endtest.io/api.php?action=runWeb&appId=23844484&appCode=85029485&suite=869550&platform=windows&os=windows10&browser=chrome&browserVersion=latest&resolution=1920x1200&geolocation=sanfrancisco&cases=8329999,8329998&notes=
+          app_id: ${{ secrets.EndTest_app_id }}
+          app_code: ${{ secrets.EndTest_app_code }}
+          api_request: ${{ secrets.EndTest_api_request }}
           number_of_loops: 10
       - name: Check for errors
         run: |

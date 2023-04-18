@@ -1,6 +1,11 @@
 name: endtest
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: test version
+        default: one
+        required: true
   pull_request:
     branches: [main] #You would need to make sure this is correct every time
 

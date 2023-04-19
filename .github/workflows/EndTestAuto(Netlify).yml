@@ -1,18 +1,15 @@
 name: endtest(Netlify)
-#on: t
-#  workflow_dispatch:
-#  pull_request:
-#    branches: [master] #You would need to make sure this is correct every time
 on:
   workflow_dispatch:
-  push: 
+  pull_request:
+    branches: [master] #You would need to make sure this is correct every time
 
 jobs:
   wait_for_netlify:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for netlify preview (60 seconds)
-        uses: denar90/wait-for-netlify-deploy-action@v2.0.2 #Documentation: TBD
+        uses: denar90/wait-for-netlify-deploy-action@v2.0.2 #Documentation: https://github.com/marketplace/actions/wait-netlify-to-deploy
         with: 
           site_id: ${{ secrets.NETLIFY_SITE_ID }}
           max_timeout: 60

@@ -1,5 +1,5 @@
 name: endtest(Netlify)
-#on:
+#on: t
 #  workflow_dispatch:
 #  pull_request:
 #    branches: [master] #You would need to make sure this is correct every time

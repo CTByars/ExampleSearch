@@ -14,7 +14,7 @@ jobs:
       - name: Wait for netlify preview (60 seconds)
         uses: denar90/wait-for-netlify-deploy-action@v2.0.2 #Documentation: TBD
         with: 
-          site_id: ${{ NETLIFY_SITE_ID }}
+          site_id: ${{ secrets.NETLIFY_SITE_ID }}
           max_timeout: 60
   run_test_case:
     name: Run test case and check for errors

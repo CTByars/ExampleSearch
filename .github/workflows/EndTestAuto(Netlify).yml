@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait for netlify preview (60 seconds)
-        uses: JakePartusch/wait-for-netlify-action@v1.4 #Documentation: https://github.com/marketplace/actions/wait-for-netlify
+        uses: JosephDuffy/wait-for-netlify-action@v1.0 #Documentation: https://github.com/marketplace/actions/wait-for-netlify-preview
         with: 
           site_name: "gentle-dolphin-a02324" # this becomes "https://{site_name}.netlify.app"
           max_timeout: 60
